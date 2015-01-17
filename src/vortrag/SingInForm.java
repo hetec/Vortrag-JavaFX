@@ -2,7 +2,6 @@ package vortrag;
 
 import org.controlsfx.*;
 import org.controlsfx.dialog.Dialog;
-
 import org.controlsfx.dialog.Dialogs;
 import org.controlsfx.control.action.Action;
 
@@ -15,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -75,9 +75,17 @@ public class SingInForm extends Application{
 		return grid;
 	}
 	
+	private void configStage(Stage s){
+		s.setTitle("Sign In");
+		Image img = new Image("/vortrag/BA_logo.png");
+		s.getIcons().add(img);
+		s.centerOnScreen();
+		s.setResizable(true);
+	}
+	
 	public void start(Stage stage){
 		stage.setScene(new Scene(this.createForms()));
-		stage.centerOnScreen();
+		this.configStage(stage);
 		stage.show();
 	}
 	
