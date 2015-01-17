@@ -5,8 +5,7 @@ import javafx.event.EventHandler;
 
 public class Handler implements EventHandler<ActionEvent>{
 	@Override
-	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void handle(ActionEvent event) {
+		// handle action
 	}
 }
