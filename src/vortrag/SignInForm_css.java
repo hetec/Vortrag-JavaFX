@@ -40,18 +40,23 @@ public class SignInForm_css extends Application{
 		PasswordField passwordPf = new PasswordField();
 		Button submitBtn = new Button("SUBMIT");
 		submitBtn.setId("submit");
+		submitBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px;");
 		Button cancelBtn = new Button("CANCEL");
 		cancelBtn.setId("cancel");
+		cancelBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px");
 		Button resetBtn	= new Button("RESET");
-		CheckBox cssOn = new CheckBox("activate CSS style");
+		resetBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px"+ "");
+		CheckBox cssOn = new CheckBox("Switch to dark theme");
 		cssOn.selectedProperty().addListener(new ChangeListener<Boolean>() {
 			@Override
 			public void changed(ObservableValue<? extends Boolean> arg0,
 					Boolean arg1, Boolean arg2) {
 				if(arg2 == true){
+					s.getScene().getStylesheets().remove(this.getClass().getResource("light.css").toExternalForm());
 					s.getScene().getStylesheets().add(this.getClass().getResource("dark.css").toExternalForm());
 				}else{
 					s.getScene().getStylesheets().remove(this.getClass().getResource("dark.css").toExternalForm());
+					s.getScene().getStylesheets().add(this.getClass().getResource("light.css").toExternalForm());
 				}
 			}
 		});
@@ -87,7 +92,7 @@ public class SignInForm_css extends Application{
 		GridPane grid = new GridPane();
 		grid.setHgap(10);
 		grid.setVgap(10);
-		grid.setPadding(new Insets(15,15,15,15));
+		grid.setPadding(new Insets(30,30,30,30));
 		
 		grid.add(heading, 0, 0, 2, 1); //colspan = 2 --> across two cells
 		grid.add(usernameLbl, 0, 2);
@@ -97,7 +102,7 @@ public class SignInForm_css extends Application{
 		grid.add(buttonBox, 1, 4);
 		grid.add(cssOn, 0, 6, 2, 1);
 		grid.add(greeting, 0, 8, 2, 1);
-		grid.setGridLinesVisible(true);
+		//grid.setGridLinesVisible(true);
 		GridPane.setHalignment(greeting, HPos.CENTER);
 		return grid;
 	}
@@ -112,6 +117,7 @@ public class SignInForm_css extends Application{
 	
 	public void start(Stage stage){
 		stage.setScene(new Scene(this.createForms(stage)));
+		stage.getScene().getStylesheets().add(this.getClass().getResource("light.css").toExternalForm());
 		this.configStage(stage);
 		stage.show();
 	}
