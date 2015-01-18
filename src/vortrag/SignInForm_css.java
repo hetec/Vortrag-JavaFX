@@ -47,17 +47,15 @@ public class SignInForm_css extends Application{
 		Button resetBtn	= new Button("RESET");
 		resetBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px"+ "");
 		CheckBox cssOn = new CheckBox("Switch to dark theme");
-		cssOn.selectedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> arg0,
-					Boolean arg1, Boolean arg2) {
-				if(arg2 == true){
-					s.getScene().getStylesheets().remove(this.getClass().getResource("light.css").toExternalForm());
-					s.getScene().getStylesheets().add(this.getClass().getResource("dark.css").toExternalForm());
-				}else{
-					s.getScene().getStylesheets().remove(this.getClass().getResource("dark.css").toExternalForm());
-					s.getScene().getStylesheets().add(this.getClass().getResource("light.css").toExternalForm());
-				}
+		cssOn.setOnAction((e) -> {
+			if(cssOn.selectedProperty().get() == true){
+				System.out.println("TRUE");
+				s.getScene().getStylesheets().remove(this.getClass().getResource("light.css").toExternalForm());
+				s.getScene().getStylesheets().add(this.getClass().getResource("dark.css").toExternalForm());
+			}else{
+				System.out.println("FALSE");
+				s.getScene().getStylesheets().remove(this.getClass().getResource("dark.css").toExternalForm());
+				s.getScene().getStylesheets().add(this.getClass().getResource("light.css").toExternalForm());
 			}
 		});
 		Text greeting = new Text();
