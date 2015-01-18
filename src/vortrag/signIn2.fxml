@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.* ?>
+<?import java.net.* ?>
+<?import javafx.geometry.* ?>
+<?import javafx.scene.control.* ?>
+<?import javafx.scene.layout.* ?>
+<?import javafx.scene.text.* ?>
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+	xmlns:fx="http://javafx.com/fmxl/1"
+	xmlns="http://javafx.com/javafx/2.2">
+	<padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+    <children>
+    	<Text text="Welcome to BA- Leipzig" GridPane.columnIndex="0" GridPane.rowIndex="0"
+    		GridPane.columnSpan="2" GridPane.rowSpan="1"
+    		style="-fx-font-family: Arial;-fx-font-size: 20px;-fx-font-weight: bold;-fx-fill: dimgray" />
+    	<Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    	<Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    	<TextField fx:id="username"	GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    	<PasswordField fx:id="password"	GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    	<HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+    		<children>
+    			<Button fx:id="signin" text="SUBMIT" id="submit" />
+    			<Button text="CANCEL" id="cancel"/>
+    			<Button text="RESET" id="reset"/>
+    		</children>
+    	</HBox>
+    	<Text fx:id="greeting" text="" GridPane.columnIndex="0" GridPane.rowIndex="8"
+    		GridPane.columnSpan="2" GridPane.rowSpan="1" styleClass="greeting"/>
+    </children>
+    <stylesheets>
+    	<URL value="@light.css" />
+    </stylesheets>
+ </GridPane>
