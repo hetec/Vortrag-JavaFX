@@ -29,7 +29,10 @@
     			<Button text="RESET" id="reset"/>
     		</children>
     	</HBox>
-    	<Text fx:id="greeting" text="" GridPane.columnIndex="0" GridPane.rowIndex="8"
+    	
+    	<Text text="Current user:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    	<Text fx:id="currentUser" text="${username.text}" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    	<Text fx:id="greeting" text="" GridPane.columnIndex="0" GridPane.rowIndex="9"
     		GridPane.columnSpan="2" GridPane.rowSpan="1" styleClass="greeting"/>
     </children>
     <stylesheets>

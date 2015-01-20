@@ -17,6 +17,8 @@
 	-fx-highlight-fill: red;
 }
 .button{
+	-fx-border-width: 3;
+	-fx-border-color:#858585;
 	-fx-background-color: #858585;
 	-fx-text-fill: #333333;
 }
@@ -25,13 +27,29 @@
 	-fx-border-width: 1;
 
 }
+#reset:hover{
+	-fx-background-color: #333333;
+	-fx-text-fill: #858585;
+}
 #submit{
+	-fx-border-width: 3;
+	-fx-border-color: #66C285;
 	-fx-background-color: #66C285;
 	-fx-text-fill: #294E35;
 }
+#submit:hover{
+	-fx-background-color: #333333;
+	-fx-text-fill:#66C285;
+}
 #cancel{
+	-fx-border-width: 3;
+	-fx-border-color: #FF6262;
 	-fx-background-color: #FF6262;
 	-fx-text-fill: #662727;
+}
+#cancel:hover{
+	-fx-background-color: #333333;
+	-fx-text-fill: #FF6262;
 }
 .greeting{
 	-fx-font-size: 20px;
