@@ -46,6 +46,7 @@ public class SignInForm_css extends Application{
 		cancelBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px");
 		Button resetBtn	= new Button("RESET");
 		resetBtn.setStyle("-fx-font-weight: bold; -fx-font-size: 10px"+ "");
+		resetBtn.setId("reset");
 		CheckBox cssOn = new CheckBox("Switch to dark theme");
 		cssOn.setOnAction((e) -> {
 			if(cssOn.selectedProperty().get() == true){
