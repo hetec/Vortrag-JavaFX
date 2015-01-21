@@ -1,4 +1,4 @@
-package vortrag;
+package vortrag.effects;
 
 import com.sun.javafx.geom.Rectangle;
 
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 public class Effects extends Application{
 	@Override
 	public void start(Stage stage) throws Exception {
-		Image image = new Image(this.getClass().getResource("BA_logo.png").toExternalForm());
+		Image image = new Image("resources/BA_logo.png");
 		final ImageView iv = new ImageView(image);
 		Button setEffect = new Button("set effect");
 		setEffect.setOnAction((e) -> {
@@ -37,19 +37,19 @@ public class Effects extends Application{
 				reflection.setFraction(0.6);
 				reflection.setInput(shadow);
 				
-				 PerspectiveTransform pt = new PerspectiveTransform();
-			        pt.setUlx(0.0f);
-			        pt.setUly(0.0f);
-			        pt.setUrx(80.0f);
-			        pt.setUry(10.0f);
-			        pt.setLrx(80.0f);
-			        pt.setLry(140.0f);
-			        pt.setLlx(0.0f);
-			        pt.setLly(150.0f);
+				 PerspectiveTransform perspective = new PerspectiveTransform();
+			        perspective.setUlx(0.0f);
+			        perspective.setUly(0.0f);
+			        perspective.setUrx(80.0f);
+			        perspective.setUry(10.0f);
+			        perspective.setLrx(80.0f);
+			        perspective.setLry(140.0f);
+			        perspective.setLlx(0.0f);
+			        perspective.setLly(150.0f);
 			        
-			    pt.setInput(reflection);
+			    perspective.setInput(reflection);
 			    
-			    iv.setEffect(pt);
+			    iv.setEffect(perspective);
 			}else{
 				iv.setEffect(null);
 			}

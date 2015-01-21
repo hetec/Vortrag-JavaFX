@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.root{
+	-fx-background: #E6E6E6;
+	-fx-font-family: Arial;
+	-fx-font-base: black;
+}
+
+.label{
+	-fx-fill: #f5f5f5;
+}
+
+.text-field{
+	-fx-border-color: white;
+	-fx-background-color: white;
+	-fx-text-fill: #333333;
+	-fx-highlight-fill: red;
+}
+.button{
+	-fx-border-width: 3;
+	-fx-border-color: white;
+	-fx-background-color: white;
+	-fx-text-fill: #333333;
+}
+.text-field:focused{
+	-fx-border-color: #333333;
+	-fx-border-width: 1;
+
+}
+#reset:hover{
+	-fx-background-color: #E6E6E6;
+	-fx-text-fill: white;
+}
+#submit{
+	-fx-border-width: 3;
+	-fx-border-color: #66C285;
+	-fx-background-color: #66C285;
+	-fx-text-fill: #294E35;
+}
+#submit:hover{
+	-fx-background-color: #E6E6E6;
+	-fx-text-fill:#66C285;
+}
+#cancel{
+	-fx-border-width: 3;
+	-fx-border-color: #FF6262;
+	-fx-background-color: #FF6262;
+	-fx-text-fill: #662727;
+}
+#cancel:hover{
+	-fx-background-color: #E6E6E6;
+	-fx-text-fill: #FF6262;
+}
+.greeting{
+	-fx-font-size: 20px;
+	-fx-fill: black;
+	-fx-text-alignment: center;
+}

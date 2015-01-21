@@ -1,4 +1,4 @@
-package vortrag;
+package vortrag.fxml;
 
 import java.net.URL;
 import java.util.ResourceBundle;
