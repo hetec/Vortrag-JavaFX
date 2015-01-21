@@ -10,7 +10,6 @@ public class SignIn_fxml extends Application{
 	@Override
 	public void start(Stage s) throws Exception {
 		final Parent root = FXMLLoader.load(getClass().getResource("signIn.fxml"));
-		
 		s.setScene(new Scene(root));
 		s.setTitle("Sign in via fxml");
 		s.show();
