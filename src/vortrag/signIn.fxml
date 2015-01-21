@@ -6,6 +6,7 @@
 <?import javafx.scene.control.* ?>
 <?import javafx.scene.layout.* ?>
 <?import javafx.scene.text.* ?>
+<?language javascript?>
 
 <GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
 	xmlns:fx="http://javafx.com/fmxl/1"
@@ -21,18 +22,29 @@
     	<Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
     	<Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
     	<TextField fx:id="username"	GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    	<PasswordField fx:id="password"	GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    	<PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     	<HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
     		<children>
     			<Button text="SUBMIT" id="submit" onAction="#handleSubmitAction"/>
     			<Button text="CANCEL" id="cancel"/>
     			<Button text="RESET" id="reset"/>
     		</children>
-    	</HBox>
     	
-    	<Text text="Current user:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-    	<Text fx:id="currentUser" text="${username.text}" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-    	<Text fx:id="greeting" text="" GridPane.columnIndex="0" GridPane.rowIndex="9"
+    	</HBox>
+    	<CheckBox fx:id="show" onAction="handleShowPrivateInfo()" text="Show private information" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    	<fx:script>
+    		function handleShowPrivateInfo(){
+    			if(show.selectedProperty().get()){
+    				pwOut.setVisible(true);
+	    		}else{
+	    			pwOut.setVisible(false);
+	    		}
+    		}
+    	</fx:script>
+
+    	<Text text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+    	<Text fx:id="pwOut" visible="false" text="${password.text}" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    	<Text fx:id="greeting" text="" GridPane.columnIndex="0" GridPane.rowIndex="10"
     		GridPane.columnSpan="2" GridPane.rowSpan="1" styleClass="greeting"/>
     </children>
     <stylesheets>
