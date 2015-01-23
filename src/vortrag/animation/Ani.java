@@ -2,6 +2,7 @@ package vortrag.animation;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
+import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
@@ -23,6 +24,7 @@ public class Ani {
 		st.setByX(4);
 		st.setByY(6);
 		st.setCycleCount(Timeline.INDEFINITE);
+		st.setInterpolator(Interpolator.LINEAR);
 		st.setAutoReverse(true);
 		
 		ft = new FadeTransition(Duration.millis(2000), r);
