@@ -82,6 +82,7 @@ public class Control extends HBox{
 			r.setScaleX(1);
 			r.setScaleY(1);
 			r.setFill(Color.RED);
+			r.setOpacity(1.0);
 			r.setRotate(0);
 		});
 		

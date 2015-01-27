@@ -26,7 +26,7 @@ public class TimeAni extends Application {
     //variable for storing actual frame
     private Integer i=0;
  
-    @Override public void start(Stage stage) {
+    @Override public void start(Stage stage) throws InterruptedException {
         Group p = new Group();
         Scene scene = new Scene(p);
         stage.setScene(scene);
@@ -83,12 +83,13 @@ public class TimeAni extends Application {
             }
         };
  
-  KeyFrame keyFrame = new KeyFrame(duration, onFinished , keyValueX, keyValueY);
-  KeyFrame keyFrame1 = new KeyFrame(duration, onFinished, keyColor2);
+  KeyFrame keyFrame = new KeyFrame(Duration.millis(2000), onFinished , keyValueX, keyValueY);
+  KeyFrame keyFrame1 = new KeyFrame(Duration.millis(2000), onFinished, keyColor2);
+  		
  
         //add the keyframe to the timeline
+  		
         timeline.getKeyFrames().addAll(keyFrame, keyFrame1);
- 
         timeline.play();
         timer.start();
     }

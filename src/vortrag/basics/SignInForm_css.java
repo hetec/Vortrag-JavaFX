@@ -116,7 +116,7 @@ public class SignInForm_css extends Application{
 	
 	public void start(Stage stage){
 		stage.setScene(new Scene(this.createForms(stage)));
-		stage.getScene().getStylesheets().add(this.getClass().getResource("light.css").toExternalForm());
+		stage.getScene().getStylesheets().add("vortrag/basics/light.css");
 		this.configStage(stage);
 		stage.show();
 	}
